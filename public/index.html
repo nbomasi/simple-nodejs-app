@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript App</title>
+</head>
+<body>
+    <h1>Frontend: I am new to JavaScript</h1>
+    <p id="backend-message"></p>
+
+    <script>
+        // Fetch data from the backend
+        fetch('/api/message')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('backend-message').textContent = data.message;
+            })
+            .catch(err => console.error('Error:', err));
+    </script>
+</body>
+</html>
+
