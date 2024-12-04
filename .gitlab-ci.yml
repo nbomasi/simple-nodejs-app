@@ -1,0 +1,14 @@
+stages:
+    stage: installations
+    stage: running
+
+first-node-job:
+    stage: installations
+    script: 
+      apt update -y
+      apt install nodejs
+      npm install
+first-node-run:
+    stage: running
+    script:
+       node server.js
